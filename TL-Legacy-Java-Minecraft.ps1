@@ -1,7 +1,11 @@
 ## Define variables ####
-$launcherRun = "D:\J\PC\Minecraft Java\BV\TL.exe"
-$mmtRun = "D:\P\MMT\MultiMonitorTool.exe"
+#Complete path (with drive) to TL Legacy
+$launcherRun = "xxxxxxx\TL.exe" 
+#Complete path (with drive) to MultiMonitorTool
+$mmtRun = "xxxxxxx\MultiMonitorTool.exe"
+#Define display number to show
 $mmtDisplay = 2
+#These variables below shouln't be changed unless you know what you're doing
 $processLauncher = "java"
 $windowTitleLauncher1 = "TL ::"
 $windowTitleLauncher2 = "Legacy"
@@ -14,13 +18,13 @@ Start-Process $launcherRun
 # Wait for Launcher to start
 while (!(Get-Process $processLauncher -ErrorAction SilentlyContinue | Where-Object {$_.MainWindowTitle -like ("*" + $windowTitleLauncher1 + "*")})) { }
 
-# Move Launcher to defined monitor
+# Move Launcher to defined monitor (yes, I'm moving the launcher too)
 Start-Process $mmtRun "/MoveWindow $mmtDisplay Title $windowTitleLauncher1"
 
 # Wait for Launcher to start
 while (!(Get-Process $processLauncher -ErrorAction SilentlyContinue | Where-Object {$_.MainWindowTitle -like ("*" + $windowTitleLauncher2 + "*")})) { }
 
-# Move Launcher to defined monitor
+# Move Launcher to defined monitor (yes I'm moving both screens!)
 Start-Process $mmtRun "/MoveWindow $mmtDisplay Title $windowTitleLauncher2"
 
 # Wait for Minecraft to start
