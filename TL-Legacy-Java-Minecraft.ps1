@@ -3,9 +3,9 @@
 $launcherRun = "xxxxxxx\TL.exe" 
 #Complete path (with drive) to MultiMonitorTool
 $mmtRun = "xxxxxxx\MultiMonitorTool.exe"
-#Define display number to show
+#Define display number where game should be shown
 $mmtDisplay = 2
-#These variables below shouln't be changed unless you know what you're doing
+#These variables below shouldn't be changed unless you know what you're doing
 $processLauncher = "java"
 $windowTitleLauncher1 = "TL ::"
 $windowTitleLauncher2 = "Legacy"
